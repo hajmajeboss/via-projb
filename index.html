@@ -22,16 +22,22 @@
 
                     <script type="text/javascript">
                         $("#hamburger-open").click(function () {
-                            $("ul").toggle();
+                            $("ul.menu").toggle();
 
                         });
 
                     </script>
                 </div>
             </div>
-            <ul>
+            <ul class="menu">
                 <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="">Features</a></li>
+                <li><a href="">Features</a>
+                    <ul>
+                        <li><a href="">Responsive design</a></li>
+                        <li><a href="">Revolution slider</a></li>
+                        <li><a href="">Wide color range</a></li>
+                    </ul>
+                </li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>

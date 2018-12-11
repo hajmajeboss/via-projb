@@ -64,6 +64,8 @@ hr {
       padding: 0;
       align-self: flex-end;
     }
+
+
     li {
       display: block;
 
@@ -76,6 +78,32 @@ hr {
         line-height: 130px;
       }
 
+      ul {position: absolute;
+        margin-top: -20px;
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0,0,0,0.8);
+
+        li {
+          a {line-height: 60px;}
+          a:hover {color: white;}
+        }
+      }
+
+      ul::before
+      {
+        content: "";
+        width: 0;
+        height: 0;
+        margin-top: -15px;
+        margin-left: 40px;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+
+        border-bottom: 15px solid rgba(0,0,0,0.8);
+
+      }
+
 
       a.active {
         color: @color-darkergray;
@@ -86,6 +114,10 @@ hr {
 
       }
     }
+
+  li:hover ul {
+    display: flex;
+  }
 
   li:last-child {
     margin-right: 75px;
@@ -538,6 +570,7 @@ width: 1180px;  height: 470px;
       line-height: 25px;
     }
 
+
     img {width: 100%;}
 
     form {
@@ -634,6 +667,29 @@ width: 1180px;  height: 470px;
   }
 }
 
+.articleLists
+{
+  padding: 20px;
+  padding-bottom: 0px;
+  margin-top: 60px;
+
+  a.btn
+  {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #cccccc;
+    font-weight: bold;
+  }
+
+  a.active
+  {
+    background-color: @color-yellow;
+  }
+}
+
 @media only screen and (max-width: 1024px)
 {
   #container {width: 100%;}
@@ -669,7 +725,11 @@ width: 1180px;  height: 470px;
           line-height: 60px;
           text-align: center;
         }
+
+        ul {display: none;}
       }
+
+      li:hover ul {display: none;}
       li:last-child {margin-right: 0px;}
     }
   }
@@ -757,6 +817,8 @@ width: 1180px;  height: 470px;
         margin-bottom: 10px;
       }
     }
+
+
   }
 
   #section-footer1
@@ -776,5 +838,10 @@ width: 1180px;  height: 470px;
       a {line-height: 30px; padding: 0; padding-bottom: 10px;}
     }
 
+  }
+
+  .articleLists
+  {
+    margin-bottom: 30px;
   }
 }
