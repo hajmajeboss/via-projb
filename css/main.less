@@ -482,3 +482,124 @@ body {
     margin-right: 20px;
   }
 }
+
+#section2_articles {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 40px 150px 40px;
+  .article {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 75%;
+    padding: 0px 20px;
+
+    a.btn
+    {
+      text-decoration: none;
+      background-color:  @color-yellow;
+      display: inline-block;
+      padding: 10px 5px;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    p {
+      line-height: 25px;
+    }
+
+    form {
+
+      label {
+        font-weight: bold;
+        padding: 20px 0px 5px 0px;
+        display: inline-block;
+      }
+
+      input {
+        border-radius: 5px;
+        border: 1px solid #E2E2E2;
+        padding: 8px;
+        width: 250px;
+      }
+
+      textarea {
+        border-radius: 5px;
+        border: 1px solid #E2E2E2;
+        padding: 8px;
+        width: 97%;
+        height: 150px;
+      }
+
+      button {
+        background-color: @color-yellow;
+
+        color: white;
+        border: 0;
+        font-weight: bold;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: all 0.3s;
+      }
+
+      button:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #info {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    padding: 0px 20px;
+
+    p {
+      line-height: 25px;
+    }
+
+    a {
+      text-decoration: none;
+      color: @color-lightgrayfont;
+      transition: all 0.3s;
+    }
+
+    a:hover {
+      color: black;
+    }
+
+    #info-socialbox {
+      display: flex;
+      flex-direction: row;
+      align-self: baseline;
+      margin-right: 22px;
+
+      .soc:first-child {
+        margin-left: 0px;
+      }
+      .soc {
+        background-color: @color-darkgray;
+        border-radius: 5px;
+        margin: 0px 5px 0px 5px;
+        width: 45px;
+        line-height: 45px;
+        display: inline-block;
+        text-align: center;
+        color: white;
+        transition: all 0.3s;
+      }
+
+      .soc:hover {
+        background-color: @color-yellow;
+        color: black;
+
+      }
+    }
+  }
+
+}
