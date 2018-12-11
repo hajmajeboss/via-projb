@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <script src="js/less.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
     <title>HEI0051 - VIA Projekt B</title>
 </head>
 <body>
@@ -43,11 +44,62 @@
                 <form>
                     <label>Name</label><br>
                     <input name="name" type="text"><br>
+                    <span id="name_err" class="err">Vložte prosím jméno.<br></span>
                     <label>Email</label><br>
                     <input name="email" type="email"><br>
+                    <span id="email_err" class="err">Vložte prosím validní email.<br></span>
                     <label>Message</label><br>
                     <textarea name="message" type="text"></textarea><br>
-                    <button type="submit">Submit Form</button>
+                    <span id="message_err" class="err">Vložte prosím text zprávy.<br></span>
+                    <button type="button" id="submit_btn">Submit Form</button>
+
+                    <script type="text/javascript">
+                        $("#name_err").css("visibility", "hidden");
+                        $("#email_err").css("visibility", "hidden");
+                        $("#message_err").css("visibility", "hidden");
+
+                        $("#submit_btn").click(function () {
+                            var isOk = true;
+                            var name = $("input[name=name]").val();
+                            if (!name || name === "")
+                            {
+                               $("#name_err").css("visibility", "visible");
+                               isOk = false;
+                            }
+                            else {
+                                $("#name_err").css("visibility", "hidden");
+                            }
+
+                            var email =  $("input[name=email]").val();
+                            if (!email || email === "" || !validateEmail(email)) {
+                                $("#email_err").css("visibility", "visible");
+                                isOk = false;
+                            }
+                            else {
+                                $("#email_err").css("visibility", "hidden");
+                            }
+
+                            var message = $("textarea[name=message]").val();
+                            if (!message || message === "") {
+                                $("#message_err").css("visibility", "visible");
+                                isOk = false;
+                            }
+                            else {
+                                $("#message_err").css("visibility", "hidden");
+                            }
+
+                            if (isOk)
+                            {
+                                window.location.href = "index.html";
+                            }
+                        });
+
+                        function validateEmail(email) {
+                            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            return re.test(String(email).toLowerCase());
+                        }
+
+                    </script>
 
                 </form>
 
