@@ -86,38 +86,38 @@
                     <button type="button" id="submit_btn">Submit Form</button>
 
                     <script type="text/javascript">
-                        $("#name_err").css("visibility", "hidden");
-                        $("#email_err").css("visibility", "hidden");
-                        $("#message_err").css("visibility", "hidden");
+                        $("#name_err").hide();
+                        $("#email_err").hide();
+                        $("#message_err").hide();
 
                         $("#submit_btn").click(function () {
                             var isOk = true;
                             var name = $("input[name=name]").val();
                             if (!name || name === "")
                             {
-                               $("#name_err").css("visibility", "visible");
+                               $("#name_err").show();
                                isOk = false;
                             }
                             else {
-                                $("#name_err").css("visibility", "hidden");
+                                $("#name_err").hide();
                             }
 
                             var email =  $("input[name=email]").val();
                             if (!email || email === "" || !validateEmail(email)) {
-                                $("#email_err").css("visibility", "visible");
+                                $("#email_err").show();
                                 isOk = false;
                             }
                             else {
-                                $("#email_err").css("visibility", "hidden");
+                                $("#email_err").hide();
                             }
 
                             var message = $("textarea[name=message]").val();
                             if (!message || message === "") {
-                                $("#message_err").css("visibility", "visible");
+                                $("#message_err").show();
                                 isOk = false;
                             }
                             else {
-                                $("#message_err").css("visibility", "hidden");
+                                $("#message_err").hide();
                             }
 
                             if (isOk)
